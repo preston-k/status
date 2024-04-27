@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log a Disruption</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins"/>
+  <link rel="icon" href="https://cdn.prestonkwei.com/personalwebsitefavicon.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  
+  <div id='loginbox' onsubmit='login()'>
+    <form>
+      <input type='password' id='pw' placeholder='Password'></input>
+      <button type='submit' id='submitbut'>Log In</button>
+    </form>
+  </div>
+  <div id='maincontent'>   <!-- MAIN DIV -- EVERYTHING THAT IS PASSWORD PROTECTED MUST BE IN HERE -->
+    <h1 id='h1'>Log a Disruption</h1>
+    <form id='disruptionlog'>
+      <input type='date' id='outagedate'></input>
+      <p>What kind of outage is this?</p>
+      <select id='type'>
+        <option disabled selected>Select a Reason</option>
+        <option value='major'>Major Outage: Site is NOT functional</option>
+        <option value='partial'>Partial Outage: Site is functional, but some systems remain impacted</option>
+        <option value='minor'>Minor Outage: Site is fully operational, but some parts of the site may encounter minor issues.</option>
+      </select>
+      <div id='preview'></div>
+      <textarea id='desc' placeholder='Description of the Outage'></textarea>
+      <p id='outageid'></p>
+      <button type='submit'>Log Outage</button>
+    </form>
+
+<!-- END OF PASSWORD PROECTION. NOTHING SHOULD GO AFTER THIS DIV -->
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+  <script src="log.js"></script>
+</body>
+</html>
